@@ -13,7 +13,7 @@ Contributions: Wrote the main function/driver program. Wrote readme file, and wo
 
 Name: Vincent Polanco
 Email: vincent.polanco@csu.fullerton.edu
-Contributions:
+Contributions: (TBD)
 
 Special Notes:
 Nothing to report.
