@@ -6,15 +6,17 @@ A C++ Project
 How to run on LINUX:
 - Open the terminal
 
-- Navigate to the directory. For example, cd /path/to/your/code
+- Navigate to the directory. 
+    For example, cd /path/to/your/code
 
 - Compile the code using g++. This will generate an executible file. main.cpp will represent the main program.
-  For example: g++ -o memorymanagementsimulator main.cpp
+    For example: g++ -o memorymanagementsimulator main.cpp
 
 - Once you have compiled the code, run the program using the command:
-  ./memorymanagementsimulator
+    ./memorymanagementsimulator
 
-- Then, the prompt will ask you to enter paramaters like total memory size, page size, and input file name. Input file name is: in1.txt
+- Then, the prompt will ask you to enter paramaters like total memory size, page size, and input file name. 
+    Input file name is: in1.txt
 
 - All data outputted will be outputted to their respective output files and NOT the terminal, known as out1.txt, out2.txt, and out3.txt
 
