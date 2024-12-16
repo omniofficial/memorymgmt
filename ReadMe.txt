@@ -8,7 +8,7 @@ Collaborators:
 
 Name: Adrian Diaz
 Email: adiaz20@csu.fullerton.edu
-Contributions: Worked on functions, and more (TBD)
+Contributions: Worked on function implementations, diagrams, and readme file.
 
 
 Name: Eduardo Guerra
