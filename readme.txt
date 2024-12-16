@@ -1,5 +1,9 @@
 This program was written in C++. 
 
+How to run on LINUX:
+
+
+
 Collaborators: 
 
 Name: Adrian Diaz
