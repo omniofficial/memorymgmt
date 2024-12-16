@@ -295,40 +295,58 @@ void printResults(int currentTime, queue<Process> &processQueue, int memory[], i
 
 int main()
 {
-  Process processArray[MAX_PROCESS_COUNT];
-  int processCount = 0;
-  queue<Process> processQueue;
-  int memory[MAX_PROCESS_COUNT] = {0}; // Memory tracker (by frame number)
+  char runAgain = 'y';
 
-  grabUserInput();
-  parseInputFile(inputFileName, processArray, processCount);
-
-  int currentTime = 0;
-  while (true)
+  // Loop to run the program again if the user chooses to
+  while (runAgain == 'y' || runAgain == 'Y')
   {
-    manageProcesses(currentTime, processArray, processCount, processQueue);
-    manageMemory(memory, totalMemorySize, pageFrameSize, processArray, processCount, currentTime, processQueue);
-    manageQueue(currentTime, processQueue, memory, totalMemorySize, pageFrameSize, processArray, processCount);
-    printResults(currentTime, processQueue, memory, totalMemorySize, pageFrameSize, processArray, processCount);
+    Process processArray[MAX_PROCESS_COUNT];
+    int processCount = 0;
+    queue<Process> processQueue;
+    int memory[MAX_PROCESS_COUNT] = {0}; // Memory tracker (by frame number)
 
-    bool allProcessesCompleted = true;
-    for (int i = 0; i < processCount; ++i)
+    grabUserInput();
+    parseInputFile(inputFileName, processArray, processCount);
+
+    int currentTime = 0;
+    while (true)
     {
-      if (!processArray[i].isCompleted)
+      manageProcesses(currentTime, processArray, processCount, processQueue);
+      manageMemory(memory, totalMemorySize, pageFrameSize, processArray, processCount, currentTime, processQueue);
+      manageQueue(currentTime, processQueue, memory, totalMemorySize, pageFrameSize, processArray, processCount);
+      printResults(currentTime, processQueue, memory, totalMemorySize, pageFrameSize, processArray, processCount);
+
+      bool allProcessesCompleted = true;
+      for (int i = 0; i < processCount; ++i)
       {
-        allProcessesCompleted = false;
+        if (!processArray[i].isCompleted)
+        {
+          allProcessesCompleted = false;
+          break;
+        }
+      }
+
+      if (allProcessesCompleted)
+      {
         break;
       }
+
+      currentTime++;
     }
 
-    if (allProcessesCompleted)
+    outputFile.close();
+
+    // Ask the user if they would like to run the program again with different parameters
+    cout << "Would you like to run the program again with different parameters (y/n)? ";
+    cin >> runAgain;
+
+    // If user chooses 'n', exit the loop and end the program
+    if (runAgain == 'n' || runAgain == 'N')
     {
-      break;
+      cout << "You have successfully exited the program." << endl;
     }
-
-    currentTime++;
   }
 
-  outputFile.close();
   return 0;
 }
+
