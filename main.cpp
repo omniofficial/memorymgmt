@@ -1,3 +1,9 @@
+// -------------------------------
+// Assignment: Memory Management
+// Due date: 12/15/24
+// Purpose: This project involves creating a simulation to analyze the impact of limited memory and memory management policies by simulating process execution, generating event traces, and calculating average turnaround time.
+// -------------------------------
+
 #include <iostream>
 #include <fstream>
 #include <sstream>
